@@ -1,0 +1,68 @@
+.banner {
+    width:100%;
+    padding-left: 20px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+.banner-content{
+    color: white;
+    position: absolute;
+    text-align: left;
+   
+    margin-right: 30%;
+    margin-top: 10%;
+    animation:fade-in 5s ease infinite forwards;
+}
+.banner-content h1{
+    font-size: 70px;
+}
+
+.banner-decor{
+    position: absolute;
+    width: 150%;
+   height: 50%;
+    transform: rotate(120deg);
+    animation: decor-trans-1 3s ease-in-out infinite alternate;
+   
+     background-color:darkgray;
+}
+.banner-decor-2{
+    position: absolute;
+    width: 150%;
+   height: 50%;
+    transform: rotate(120deg) translate(0px, -100px);
+    animation: decor-trans-2 3s ease-in-out infinite alternate;
+   
+     background-color:grey;
+}
+@keyframes decor-trans-1{
+    0%{
+        transform: rotate(120deg) translateX(-100%);
+    }
+    100%{
+        transform: rotate(120deg) translateX(0%);
+    }
+
+}
+@keyframes decor-trans-2{
+    0%{
+        transform: rotate(120deg) translate(100%, -100px);
+    }
+    100%{
+        transform: rotate(120deg) translate(0%, -100px);
+    }
+
+}
+@keyframes fade-in{
+    from{
+        transform:translateY(70px);
+        opacity: 0;
+    }
+    to{
+        transform:translateY(0);
+        opacity: 1;
+        
+    }
+}
