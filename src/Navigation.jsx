@@ -7,7 +7,7 @@ function Navigation(){
       <div>
       <ul className="navbar-nav mx-2 flex-row" id="navId">
         <li className="nav-item mx-2" >
-         <NavLink to='/'>Home</NavLink>
+         <NavLink to='/home'>Home</NavLink>
         </li>
         <li className="nav-item mx-2">
          <NavLink to='/buy'>Buy</NavLink>
