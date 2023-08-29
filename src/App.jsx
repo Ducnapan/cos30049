@@ -15,13 +15,15 @@ function App() {
     <div>
       <Router>
         <div>
-      <Navigation />
+        <Navigation />
     <Routes>
-       <Route path='/' element={<Home/>}/>
+    <Route path='/cos30049/'  element={<Home/>}/>
+       <Route path='/' exact element={<Home/>}/>
         <Route path='/buy' element={<Buy/>}  />
         <Route path='/items' element={<Items/>} />
         <Route path='/history' element={<History/>} />
     </Routes>
+  
     </div>
   </Router>
   
