@@ -1,12 +1,12 @@
 import Banner from'./Banner'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Navigation from './Navigation'
-import RateBar from './RateBar'
+import TopBid from './TopBid'
 import Buy from './Buy'
 import Market from './Market'
 import History from './History'
 import './App.css'
-import TopCrypto from './TopCrypto'
+import TopSeller from './TopSeller'
 import Footer from './Footer'
 
 function App() {
@@ -26,8 +26,8 @@ function App() {
     </div>
   </Router>
   <Banner />
-  <RateBar />
-  <TopCrypto />
+  <TopBid />
+  <TopSeller />
   <Footer />
   
   </div>
