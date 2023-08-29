@@ -1,7 +1,7 @@
 import NFT from './NFT'
 function TopBid(){
     return (
-      <div className='d-flex flex-column justify-content-center my-3'>
+      <div className='d-flex flex-column justify-content-center my-5'>
       <h1>Top Bid NFTs</h1>
        <div className="d-flex flex-row justify-content-center my-2">
           <NFT name = 'Man covered in Blue paint'

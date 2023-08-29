@@ -13,7 +13,7 @@ function Navigation(){
          <NavLink to='/buy'>Buy</NavLink>
         </li>
         <li className="nav-item mx-2">
-         <NavLink to='/market'>Market</NavLink>
+         <NavLink to='/items'>NFTs</NavLink>
         </li>
         <li className="nav-item mx-2">
          <NavLink to='/history'>History</NavLink>

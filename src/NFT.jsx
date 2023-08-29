@@ -1,3 +1,4 @@
+import Shopping from '@mui/icons-material/AddShoppingCart';
 import './NFT.css'
 function NFT({name, color ,price}){
 
@@ -19,7 +20,8 @@ function NFT({name, color ,price}){
          </tr>
          </tbody>
       </table>
+      <div className='buy-btn'><h4>Buy Now <Shopping /></h4></div>
         </div>
     )
-}
+};
 export default NFT

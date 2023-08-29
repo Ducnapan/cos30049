@@ -8,7 +8,7 @@ function TopSeller(){
         <div className='d-flex justify-content-center flex-column'>
             <h1>Top Seller</h1>
             <div className="d-flex justify-content-center">
-            <table className="table table-striped my-5 " style={{width:'70%'}}>
+            <table className="table table-striped my-3 " style={{width:'70%'}}>
   <thead>
     <tr>
       <th scope="col">Rank</th>

@@ -1,13 +1,12 @@
-import Banner from'./Banner'
+
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Navigation from './Navigation'
-import TopBid from './TopBid'
+import Home from './Home'
 import Buy from './Buy'
-import Market from './Market'
+import Items from './Items'
 import History from './History'
 import './App.css'
-import TopSeller from './TopSeller'
-import Footer from './Footer'
+
 
 function App() {
   
@@ -18,17 +17,14 @@ function App() {
         <div>
       <Navigation />
     <Routes>
-       <Route path='/'/>
+       <Route path='/' element={<Home/>}/>
         <Route path='/buy' element={<Buy/>}  />
-        <Route path='/market' element={<Market/>} />
+        <Route path='/items' element={<Items/>} />
         <Route path='/history' element={<History/>} />
     </Routes>
     </div>
   </Router>
-  <Banner />
-  <TopBid />
-  <TopSeller />
-  <Footer />
+  
   
   </div>
       
