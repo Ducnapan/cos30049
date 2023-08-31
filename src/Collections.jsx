@@ -1,41 +1,47 @@
 import './Items.css'
-import NFT from './NFT'
-function Items(){
+import Collection from './Collection'
+function Collections(){
     return (
         <div >
         <div className = 'd-flex justify-content-center'>
         <div className='container d-flex justify-content-center flex-column align-items-center my-5'>
         <div className = 'blog'>
-            <h3 className='py-3'>Popular Items</h3>
+            <h3 className='py-3'>Popular Collections</h3>
             <div className="d-flex flex-row justify-content-center my-3 py-5">
-          <NFT name = 'Man covered in Blue paint'
-               color = 'aqua'
+          <Collection name = 'Red'
+               color = 'red'
                price = {0.25}
+               volume={231}
           />
-          <NFT name = 'Woman covered in Purple paint'
-               color = 'purple'
+          <Collection name = 'Yellow'
+               color = 'yellow'
                price = {0.35} 
+               volume={212}
           />
-          <NFT name = 'Child covered in pink paint'
-               color = 'violet'
+          <Collection name = 'Green'
+               color = 'green'
                price = {0.65} 
+               volume={400}
           /> 
          </div>
         </div>
         <div className = 'blog my-5'>
-            <h3 className='py-3'>New Items</h3>
+            <h3 className='py-3'>New Collections</h3>
             <div className="d-flex flex-row justify-content-center my-3 py-5">
-          <NFT name = 'Police covered in Yellow paint'
-               color = 'yellow'
+          <Collection name = 'Vanta'
+               color = 'black'
                price = {0.45}
+               volume={200}
           />
-          <NFT name = 'Teacher covered in Green paint'
-               color = 'teal'
+          <Collection name = 'Bronze'
+               color = '#CD7F32'
                price = {0.75} 
+               volume={320}
           />
-          <NFT name = 'Doctor covered in orange paint'
-               color = 'orange'
+          <Collection name = 'Ocean'
+               color = 'blue'
                price = {0.85} 
+               volume={270}
           /> 
          
          </div> 
@@ -47,4 +53,4 @@ function Items(){
         </div>
     )
 }
-export default Items
+export default Collections

@@ -1,0 +1,51 @@
+.detail-container{
+ width:80%;
+  height:80%;
+  border-radius: 10px;
+  position: inherit;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-align: justify;
+}
+.detail-container-2{
+    display: flex;
+  
+    width:30%;
+     height:30%;
+     border-radius: 10px;
+   
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   }
+   .detail-container-3{
+   
+    width: 100%;
+    position: inherit;
+     border-radius: 10px;
+    border: 1px solid rgb(175, 172, 172);
+    
+   }
+   .detail-container-title{
+   
+    width: 100%;
+    position: inherit;
+    
+    border-bottom: 1px solid rgb(175, 172, 172);
+    
+   }
+   .detail-container-btn{
+    text-align: center;
+    width: 100%;
+    position: inherit;
+    border-radius: 10px;
+    color:white;
+    background-color: black;
+    
+   }
+.detail-img{
+   
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: aqua;
+  
+
+}

@@ -1,6 +1,7 @@
+import './Footer.css'
 function Footer(){
     return (
-        <footer className="d-flex justify-content-center text-white-50" style={{backgroundColor:"black"}}>
+        <footer className="footer text-white-50">
             <p>Copyright &copy; Duc Ha, Thanh Phat Vo </p>
 
         </footer>

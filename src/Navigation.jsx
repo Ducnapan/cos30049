@@ -2,22 +2,24 @@ import {NavLink} from 'react-router-dom'
 import './Navigation.css'
 function Navigation(){
     return (
-      <nav className='navbar navbar-light'>
+      <nav className='navbar' style={{backgroundColor:'#F5F5F5'}}>
         <a className='navbar-brand'> CrytoFinance</a>
       <div>
       <ul className="navbar-nav mx-2 flex-row" id="navId">
         <li className="nav-item mx-2" >
-         <NavLink to='/'>Home</NavLink>
+         <NavLink to='/cos30049/'>Home</NavLink>
         </li>
         <li className="nav-item mx-2">
-         <NavLink to='/buy'>Buy</NavLink>
+         <NavLink to='/cos30049/collections'>Collections</NavLink>
         </li>
         <li className="nav-item mx-2">
-         <NavLink to='/items'>NFTs</NavLink>
+         <NavLink to='/cos30049/items'>NFTs</NavLink>
         </li>
+       
         <li className="nav-item mx-2">
-         <NavLink to='/history'>History</NavLink>
+         <NavLink to='/cos30049/history'>History</NavLink>
         </li>
+       
        
        
       </ul>
