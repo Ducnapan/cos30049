@@ -38,6 +38,7 @@
     border-radius: 10px;
     color:white;
     background-color: black;
+    cursor: pointer;
     
    }
 .detail-img{
@@ -49,3 +50,4 @@
   
 
 }
+

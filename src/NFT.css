@@ -14,7 +14,7 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     overflow: hidden;
     cursor: pointer;
-    background-color: goldenrod;
+    background-color: white;
 }
 .item-img{
     width: 100%;
@@ -42,4 +42,6 @@
     color:black;
     text-decoration: none;    
 }
+
+
 

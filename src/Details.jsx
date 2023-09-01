@@ -2,6 +2,9 @@ import './Details.css'
 import { BarChart } from '@mui/x-charts';
 import {useEffect, useState} from 'react'
 function Details(){
+  const [showPopup, setShowPopup] = useState(false);
+
+  
     const [name,setName] = useState('');
     const [color,setColor] = useState('');
     const [price,setPrice] = useState(0);
@@ -14,6 +17,9 @@ function Details(){
         
        
     }, []); 
+    const togglePopup = () => {
+      setShowPopup(!showPopup);
+    };
 
     return(
     <div className="d-flex justify-content-center flex-column align-items-center py-5">
@@ -47,9 +53,21 @@ function Details(){
         <h5>Price</h5>
         </div>
         <h2>{price} ETH</h2>
-        <div className='detail-container-btn my-3'> Buy Now</div>
+        <div className='detail-container-btn my-3' onClick={togglePopup}> Buy Now</div>
 
        </div>
+       {showPopup &&
+       <div className = "detail-container-3 px-3 my-3">
+        <div className='detail-container-title'>
+        <h5>Confirm</h5>
+        </div>
+        <h2>Are you sure</h2>
+        <div className='detail-container-btn my-3'>Yes</div>
+        <div className='detail-container-btn my-3 bg-light text-black'>No</div>
+
+       </div>
+         }
+
        <div className = "detail-container-3 px-3">
         <div className='detail-container-title'>
         <h5>Price History</h5>

@@ -6,7 +6,9 @@ function Items(){
         <div className = 'd-flex justify-content-center'>
         <div className='container d-flex justify-content-center flex-column align-items-center my-5'>
         <div className = 'blog'>
+          <div className='container-title'>
             <h3 className='py-3'>Popular Items</h3>
+            </div>
             <div className="d-flex flex-row justify-content-center my-3 py-5">
           <NFT name = 'Man covered in Blue paint'
                color = 'aqua'
@@ -23,7 +25,9 @@ function Items(){
          </div>
         </div>
         <div className = 'blog my-5'>
+        <div className='container-title'>
             <h3 className='py-3'>New Items</h3>
+            </div>
             <div className="d-flex flex-row justify-content-center my-3 py-5">
           <NFT name = 'Police covered in Yellow paint'
                color = 'yellow'

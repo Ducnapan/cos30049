@@ -2,7 +2,6 @@
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Navigation from './Navigation'
 import Home from './Home'
-import Buy from './Buy'
 import Items from './Items'
 import History from './History'
 import Footer from './Footer'

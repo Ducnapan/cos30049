@@ -10,6 +10,7 @@ function NFT({name, color ,price}){
 
 
     };
+    
 
     return (
         <div className="item-container mx-4" onClick={storeData}>
