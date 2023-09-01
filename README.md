@@ -1,8 +1,15 @@
-# React + Vite
+# COS30049 - Technology Innovation
+## Description: 
+A front-end project with the goal of creating a decentralized trading platform which trades NFTs
+## Member: 
+- Thanh Phat Vo
+- Duc Hien Ha
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This site was built on [GitHub Pages with React + Vite](https://ducnapan.github.io/cos30049/).
+## Structure:
+- Home Page: Our index page (Navigation Bar, Banner, ShowTopSeller, ShowTopCollections)
+- Navigation Bar: Constant tool that helps direct you to other pages
+- History: Show user trading history
+- Collections: show all current collections
+- NFTs: show all NFTs
+  
