@@ -1,9 +1,9 @@
 
 
-
+//Show the top sellign collection
 function TopSeller(){
     
- const default_val = 'N/A';
+ 
     return (
         <div className='d-flex justify-content-center flex-column'>
             <h1>Top Seller</h1>
@@ -23,22 +23,22 @@ function TopSeller(){
       <th scope="row">1</th>
       <td style={{backgroundColor:'red'}}></td>
       <td>Red</td>
-      <td>{default_val}</td>
-      <td>{default_val}</td>
+      <td>0.25</td>
+      <td>212</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td style={{backgroundColor:'yellow'}}></td>
       <td>Yellow</td>
-      <td>{default_val}</td>
-      <td>{default_val}</td>
+      <td>0.35</td>
+      <td>212</td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td style={{backgroundColor:'green'}}></td>
       <td>Green</td>
-      <td>{default_val}</td>
-      <td>{default_val}</td>
+      <td>0.65</td>
+      <td>400</td>
     </tr>
   </tbody>
 </table>

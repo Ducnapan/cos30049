@@ -1,4 +1,5 @@
 import NFT from './NFT'
+//Show top bid
 function TopBid(){
     return (
       <div className='d-flex flex-column justify-content-center my-5'>

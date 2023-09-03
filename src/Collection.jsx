@@ -1,16 +1,17 @@
 import {NavLink} from 'react-router-dom'
 import './NFT.css'
+//An individual template for collection
 function Collection({name, color ,price,volume}){
     
 
     return (
         <div className="item-container-2 mx-4">
-            <NavLink className='nav-box' to='/cos30049/items'>
+            <NavLink className='nav-box' to='/cos30049/nftlisting'>
         <div  className="item-img" style={{backgroundColor:color}}></div>
         <h5 className='my-4'>{name}</h5>
         <div className='d-flex flex-row justify-content-center'>
             <div className='d-flex flex-column me-4 mb-3 text-start'>
-                <h6>Price</h6>
+                <h6>Avg. Price</h6>
                 <h6>{price} ETH</h6>
             </div>
             <div className='d-flex flex-column text-start'>

@@ -1,24 +1,37 @@
 import './Details.css'
 import { BarChart } from '@mui/x-charts';
 import {useEffect, useState} from 'react'
+import {NavLink} from 'react-router-dom'
+//Show the detail of an individual NFT
 function Details(){
   const [showPopup, setShowPopup] = useState(false);
-
+// show confirmation pop-up
   
     const [name,setName] = useState('');
     const [color,setColor] = useState('');
     const [price,setPrice] = useState(0);
     const owner = useState('null');
+   
     useEffect(() => {
         
         setName(sessionStorage.getItem("item-name"));
         setColor(sessionStorage.getItem("item-color"));
         setPrice(sessionStorage.getItem("item-price"));
+        //set up temporary data to be transfer from the NFT listing based on the NFT the user choose
         
        
     }, []); 
+    const success = ()=>{
+      sessionStorage.setItem('confirm',true);
+
+  };
+  const fail = ()=>{
+    sessionStorage.setItem('confirm',false);
+
+};
     const togglePopup = () => {
       setShowPopup(!showPopup);
+      //show confirmation pop-up
     };
 
     return(
@@ -62,9 +75,10 @@ function Details(){
         <h5>Confirm</h5>
         </div>
         <h2>Are you sure</h2>
-        <div className='detail-container-btn my-3'>Yes</div>
-        <div className='detail-container-btn my-3 bg-light text-black'>No</div>
-
+        <NavLink to='/cos30049/confirm'>
+        <div className='detail-container-btn my-3' onClick={success}>Yes</div>
+        <div className='detail-container-btn my-3 bg-light text-black' onClick={fail}>No</div>
+        </NavLink>
        </div>
          }
 

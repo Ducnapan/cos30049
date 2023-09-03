@@ -1,5 +1,6 @@
 import {NavLink} from 'react-router-dom'
 import './Navigation.css'
+// Navigation bar
 function Navigation(){
     return (
       <nav className='navbar' style={{backgroundColor:'#F5F5F5'}}>
@@ -13,7 +14,7 @@ function Navigation(){
          <NavLink to='/cos30049/collections'>Collections</NavLink>
         </li>
         <li className="nav-item mx-2">
-         <NavLink to='/cos30049/items'>NFTs</NavLink>
+         <NavLink to='/cos30049/nftlisting'>NFTs</NavLink>
         </li>
        
         <li className="nav-item mx-2">

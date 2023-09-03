@@ -1,4 +1,5 @@
 import './Banner.css'
+//The decorate banner for the first page
 function Banner(){
     return(
         <div className='banner'>

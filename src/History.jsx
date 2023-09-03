@@ -1,6 +1,7 @@
 import './History.css'
 import { useState } from 'react';
 import { TextField } from '@mui/material';
+// show User transaction history
 function History(){
     const data = [
         { id:1,name: 'Man covered in Yellow', mode:'Buy', time:'8/8/2022' },
