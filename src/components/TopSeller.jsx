@@ -1,4 +1,4 @@
-
+import {NavLink} from 'react-router-dom'
 
 //Show the top sellign collection
 function TopSeller(){
@@ -7,7 +7,8 @@ function TopSeller(){
     return (
         <div className='d-flex justify-content-center flex-column'>
             <h1>Top Seller</h1>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center ">
+             
             <table className="table table-striped my-3 " style={{width:'70%'}}>
   <thead>
     <tr>
@@ -42,7 +43,9 @@ function TopSeller(){
     </tr>
   </tbody>
 </table>
+
 </div>
+<NavLink to='/cos30049/collections'><h5>See More</h5></NavLink>
         </div>
     )
 }
