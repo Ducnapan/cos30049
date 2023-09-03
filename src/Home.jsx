@@ -1,6 +1,6 @@
-import Banner from'./Banner'
-import TopBid from './TopBid'
-import TopSeller from './TopSeller'
+import Banner from'./components/Banner'
+import TopBid from './components/TopBid'
+import TopSeller from './components/TopSeller'
 // show the Homepage
 
 function Home(){

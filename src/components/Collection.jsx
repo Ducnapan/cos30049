@@ -1,5 +1,5 @@
 import {NavLink} from 'react-router-dom'
-import './NFT.css'
+import '../css/NFT.css'
 //An individual template for collection
 function Collection({name, color ,price,volume}){
     

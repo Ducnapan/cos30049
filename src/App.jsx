@@ -1,14 +1,14 @@
 
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import Navigation from './Navigation'
+import Navigation from './components/Navigation'
 import Home from './Home'
 import NFTListing from './NFTListing'
 import History from './History'
-import Footer from './Footer'
+import Footer from './components/Footer'
 import Details from './Details'
 import Collections from './Collections'
 import Confirm from './Confirm'
-import './App.css'
+import './css/App.css'
 
 //Main hosting component
 function App() {

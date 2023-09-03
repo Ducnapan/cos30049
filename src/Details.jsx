@@ -1,4 +1,4 @@
-import './Details.css'
+import './css/Details.css'
 import { BarChart } from '@mui/x-charts';
 import {useEffect, useState} from 'react'
 import {NavLink} from 'react-router-dom'

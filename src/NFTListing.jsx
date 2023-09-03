@@ -1,5 +1,5 @@
-import './NFTListing.css'
-import NFT from './NFT'
+import './css/NFTListing.css'
+import NFT from './components/NFT'
 import { useState } from 'react';
 import { TextField } from '@mui/material';
 // Show a listing of NFTs

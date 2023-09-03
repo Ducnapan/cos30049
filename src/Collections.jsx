@@ -1,5 +1,5 @@
 import './NFTListing'
-import Collection from './Collection'
+import Collection from './components/Collection'
 import { useState } from 'react';
 import { TextField } from '@mui/material';
 // A listing for collections

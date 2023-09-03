@@ -1,4 +1,4 @@
-import './Banner.css'
+import '../css/Banner.css'
 //The decorate banner for the first page
 function Banner(){
     return(
