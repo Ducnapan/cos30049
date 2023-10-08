@@ -17,7 +17,7 @@ function NFT({name, color ,price}){
         <div className="item-container mx-4" onClick={storeData}>
             <NavLink className='nav-box' to='/cos30049/details'>
         <div  className="item-img" style={{backgroundColor:color}}></div>
-        <h5 className='my-2'>{name}</h5>
+        <h5 className='item-title my-2'>{name}</h5>
         <table className='mx-2 my-3'>
         <thead>
          <tr>

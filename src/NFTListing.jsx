@@ -1,19 +1,39 @@
 import './css/NFTListing.css'
 import NFT from './components/NFT'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { TextField } from '@mui/material';
 // Show a listing of NFTs
 function Items(){
-     const data = [
-          {name: 'Man covered in Yellow', color:'aqua', price:'0.25' },
-          {name: 'Woman with alot of Purple', color:'purple', price:'0.35' },
-          {name: 'Child covered in Pink paint', color:'violet', price:'0.65' },
-          {name: 'Police covered in Yellow paint', color:'yellow', price:'0.45' },
-          {name: 'Teacher covered in Green paint',color:'teal', price:'0.75' },
-          {name: 'Doctor covered in Orange paint',color:'orange', price:'0.85' },
-          // Add more data as needed
-        ];
+     
       const [filter, setFilter] = useState('');
+      const [data, setData] = useState([]);
+     
+
+      useEffect(() => {
+        
+          fetch('http://localhost:5173/cos30049/src/api_nft.php/')
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+             
+              return response.json();
+            })
+            .then((data) => setData(data))
+            .catch((error) => console.error('Error fetching data:', error));
+        }, []);
+        
+     //Organised item into row of 3 
+      const chunkArray = (array, chunkSize) => {
+          const chunkedArr = [];
+          for (let i = 0; i < array.length; i += chunkSize) {
+            chunkedArr.push(array.slice(i, i + chunkSize));
+          }
+          return chunkedArr;
+        };
+      
+        // Chunk the items into groups of 3
+        const chunkedItems = chunkArray(data, 3);
       
     
     // Function to handle filter input changes
@@ -45,23 +65,16 @@ function Items(){
        <div className='container-title'>
        <h3 className='py-3'>Popular Items</h3>
          </div>
-         <div className="d-flex flex-row justify-content-center my-3 py-5">
-       <NFT name =  'Man covered in Yellow'
-            color ='aqua'
-            price = {0.25}
-           
-       />
-       <NFT name= 'Woman with alot of Purple'
-            color='purple'
-            price = {0.35} 
-           
-       />
-       <NFT name= 'Child covered in Pink paint'
-            color='violet'
-            price = {0.65} 
-            
-       /> 
-      </div>
+         {chunkedItems.map((group, groupIndex) => (
+        <div key={groupIndex} className="d-flex flex-row justify-content-center my-3 py-5">
+          {group.map((item, index) => (
+           <NFT name = {item.name}
+                color = {item.color}
+                price = {item.price}
+           />
+          ))}
+        </div>
+      ))}
      </div>
      <div className = 'blog my-5'>
      <div className='container-title'>
