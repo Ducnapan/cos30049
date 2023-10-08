@@ -11,7 +11,7 @@ function Items(){
 
       useEffect(() => {
         
-          fetch('http://localhost:5173/cos30049/src/api_nft.php/')
+          fetch('src/api_nft.php/')
             .then((response) => {
               if (!response.ok) {
                 throw new Error('Network response was not ok');
