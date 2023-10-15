@@ -21,7 +21,7 @@ function Login() {
   
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-    fetch('/src/api/login.json')  // Removed curly braces around username
+    fetch('./src/api/login.json')  // Removed curly braces around username
       .then((response) => {
         
         

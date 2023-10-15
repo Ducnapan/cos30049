@@ -6,7 +6,7 @@ function TopLiked(){
 
       useEffect(() => {
         
-          fetch('./src/api/nft.json/')
+          fetch('./src/api/nft.json')
             .then((response) => {
               if (!response.ok) {
                 throw new Error('Network response was not ok');
