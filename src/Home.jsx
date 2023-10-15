@@ -1,5 +1,5 @@
 import Banner from'./components/Banner'
-import TopBid from './components/TopBid'
+import TopLiked from './components/TopLiked'
 import TopSeller from './components/TopSeller'
 // show the Homepage
 
@@ -7,7 +7,7 @@ function Home(){
     return(
         <div>
         <Banner />
-       <TopBid />
+       <TopLiked />
        <TopSeller />
        
        </div>

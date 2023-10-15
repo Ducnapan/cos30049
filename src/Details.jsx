@@ -10,6 +10,9 @@ function Details(){
     const [name,setName] = useState('');
     const [color,setColor] = useState('');
     const [price,setPrice] = useState(0);
+    const [views,setViews] = useState(0);
+    const [likes,setLikes] = useState(0);
+
     const owner = useState('null');
    
     useEffect(() => {
@@ -17,6 +20,8 @@ function Details(){
         setName(sessionStorage.getItem("item-name"));
         setColor(sessionStorage.getItem("item-color"));
         setPrice(sessionStorage.getItem("item-price"));
+        setViews(sessionStorage.getItem("item-views"));
+        setLikes(sessionStorage.getItem("item-likes"));
         //set up temporary data to be transfer from the NFT listing based on the NFT the user choose
         
        
@@ -52,12 +57,12 @@ function Details(){
         </div>
         <div className='d-flex flex-column mx-3 align-items-center'>
             <h6>Views <i className="bi bi-eye"></i></h6>
-            <p>3</p>
+            <p>{views}</p>
             
         </div>
         <div className='d-flex flex-column mx-3 align-items-center'>
             <h6>Likes </h6>
-            <p>3</p>
+            <p>{likes}</p>
             
         </div>
        </div>

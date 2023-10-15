@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Details from './Details'
 import Collections from './Collections'
 import Confirm from './Confirm'
+import Login from './Login'
 import './css/App.css'
 
 //Main hosting component
@@ -27,6 +28,7 @@ function App() {
         <Route path='/cos30049/history' element={<History/>} />
         <Route path='/cos30049/collections' element={<Collections/>} />
         <Route path='/cos30049/confirm' element={<Confirm/>} />
+        <Route path='/cos30049/login' element={<Login/>} />
     </Routes>
   
     </div>

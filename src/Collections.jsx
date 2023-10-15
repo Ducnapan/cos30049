@@ -90,11 +90,13 @@ function Collections(){
      <div className='container d-flex justify-content-center flex-column align-items-center my-5'>
         <div className = 'blog search-blog my-5'>
         <div className='container-title'>
-            <h3 className='py-3'>Search for "{filter}"</h3>
+            <h3 className='py-3'>Search for <i>{filter}</i></h3>
             </div>
             <div className="d-flex flex-row justify-content-center my-3 py-5">
-            {filteredData.map((item) => (
-          <Collection name = {item.name}
+            {filteredData.map((item,index) => (
+          <Collection 
+          key = {`nft_${index}`}
+          name = {item.name}
                color = {item.color}
                price = {item.price}
                volume = {item.volume}

@@ -1,9 +1,6 @@
 
 <?php
-// Reference:
-// https://www.leaseweb.com/labs/2015/10/creating-a-simple-rest-api-in-php/
 
-// Use this API for demonstration purposes only
 
 
 // get the HTTP method, path and body of the request
@@ -12,12 +9,12 @@ $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 $input = json_decode(file_get_contents('php://input'),true);
 
 // connect to the mysql database, provide the appropriate credentials
-$conn = mysqli_connect('feenix-mariadb.swin.edu.au','s103492558','080502','s103492558_db');
+$conn = mysqli_connect('localhost','root','','nft_db');
 
 mysqli_set_charset($conn,'utf8');
 
 // initialise the table name accordingly
-$table = "NFT";
+$table = "login";
 
 // retrieve the search key field name and value from the path
 $fld = preg_replace('/[^a-z0-9_]+/i','',array_shift($request));
