@@ -19,8 +19,7 @@ function Items(){
       const [type,setType] = useState('none');
  
       useEffect(() => {
-        const url = 'http://localhost/api/api_nft.php/';
-        //const url = './src/api/nft.json';
+        //const url = 'http://localhost/api/api_nft.php/';
         
           axios.get(url)
             .then((response) => {
