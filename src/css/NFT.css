@@ -6,6 +6,7 @@
     overflow: hidden;
     cursor: pointer;
     background-color: white;
+    
 }
 .item-container-2{
     width:180px;
@@ -16,10 +17,20 @@
     cursor: pointer;
     background-color: white;
 }
+.item-container-3{
+    width:180px;
+    height:600px;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: white;
+}
 .item-img{
     width: 100%;
     height: 120px;
     border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid black;
    
 }
 .buy-btn {

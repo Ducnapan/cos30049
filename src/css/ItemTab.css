@@ -1,0 +1,15 @@
+.tab-container{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    border-radius: 10px 10px 10px 10px;
+    border:1px solid black;
+}
+.show-container{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: start;
+    padding-left: 10%;
+  
+}

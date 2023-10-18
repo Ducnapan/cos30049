@@ -41,6 +41,9 @@ function Navigation() {
           <li className='nav-item mx-2'>
             <NavLink to='/cos30049/history'>History</NavLink>
           </li>
+          <li className='nav-item mx-2'>
+            <NavLink to='/cos30049/inventory'>Inventory</NavLink>
+          </li>
           |
           {login ? (
             <li className='nav-item mx-2'>

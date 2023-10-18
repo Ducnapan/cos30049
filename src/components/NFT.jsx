@@ -2,8 +2,9 @@ import {NavLink} from 'react-router-dom'
 import Shopping from '@mui/icons-material/AddShoppingCart';
 import '../css/NFT.css'
 //in dividual template for NFT
-function NFT({name, color ,price,views,likes}){
+function NFT({id,name, color ,price,views,likes}){
     const storeData = ()=>{
+        sessionStorage.setItem('item-id',id);
         sessionStorage.setItem('item-name',name);
         sessionStorage.setItem('item-color',color);
         sessionStorage.setItem('item-price',price);

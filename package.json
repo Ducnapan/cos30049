@@ -15,11 +15,14 @@
     "@mui/icons-material": "^5.14.6",
     "@mui/material": "^5.14.6",
     "@mui/x-charts": "^6.0.0-alpha.8",
+    "@openzeppelin/contracts": "^5.0.0",
     "axios": "^1.5.0",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.1",
     "cors": "^2.8.5",
+    "ethers": "^6.8.0",
     "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "mysql": "^2.18.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -33,6 +36,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "hardhat": "^2.18.1",
     "vite": "^4.4.5"
   }
 }

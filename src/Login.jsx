@@ -2,7 +2,7 @@ import './css/History.css';
 import { useState } from 'react';  // Removed useEffect since it's not used
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';  // Corrected import statement
-
+import axios from 'axios';
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,11 +21,14 @@ function Login() {
   
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-    fetch('./src/api/login.json')  // Removed curly braces around username
+    //const url = 'http://localhost/api/api_login.php/';
+    const url = './src/api/login.json';
+    
+      axios.get(url)
       .then((response) => {
         
         
-        return response.json();
+        return response.data;
       })
       .then((data) => { 
         data.forEach(element => {

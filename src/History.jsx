@@ -1,6 +1,7 @@
 import './css/History.css'
 import { useState } from 'react';
 import { TextField } from '@mui/material';
+import ItemTab from './components/ItemTab';
 // show User transaction history
 function History(){
     const data = [
@@ -15,56 +16,47 @@ function History(){
         { id:9,name: 'Man covered in Orange', mode:'Sell', time:'18/10/2022' },
         // Add more data as needed
       ];
-    const [filter, setFilter] = useState('');
-  
-  // Function to handle filter input changes
-  const handleFilterChange = (e) => {
-    setFilter(e.target.value);
-  };
-  
-  // Filter the data based on the filter value
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(filter.toLowerCase())
-  );
-    return(
-    <div className='d-flex justify-content-center my-5'>
-        <div className ="history-container d-flex justify-content-center align-items-center flex-column">
-        <div className="container-title mb-5"><h2>History</h2></div>
-        
-        <div className='d-flex align-items-center flex-column' style={{width:'70%'}}>
-        <TextField id="standard-basic" label="Filter" variant="standard"
-         placeholder="Filter by name"
-         className='input-container align-self-end'
-        value={filter}
-        onChange={handleFilterChange} />
-        
-      <table className='table table-striped' >
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Mode</th>
-            <th>Date</th>
-           
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.map((item, index) => (
-            <tr key={index}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.mode}</td>
-              <td>{item.time}</td>
-              
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      </div>
+      const [filter, setFilter] = useState('');
+
+      const handleFilterChange = (e) => {
+        setFilter(e.target.value);
+      };
+    
+      const filteredData = data.filter((item) =>
+        item.name.toLowerCase().includes(filter.toLowerCase())
+      );
+    
+      return (
+        <div className='d-flex justify-content-center my-5'>
+          <div className="history-container d-flex justify-content-center align-items-center flex-column">
+            <div className="container-title mb-5"><h2>History</h2></div>
+    
+            <div className='d-flex align-items-center flex-column' style={{ width: '70%' }}>
+              <TextField
+               id="standard-basic"
+               label="Filter"
+               variant="standard"
+               placeholder="Filter by name"
+                className='input-container align-self-end my-4'
+                value={filter}
+                onChange={handleFilterChange}
+              />
+             <div className='d-flex history-container justify-content-center flex-column mb-4'>
+              {filteredData.map((item, index) => (
+                <ItemTab
+                  key={index}
+                  name={item.name}
+                  price={0}
+                  date={item.time}
+                  transID={0}
+                  tokenID={0}
+                />
+              ))}
+              </div>
+            </div>
+          </div>
         </div>
-
-    </div>
-    )
-
-}
-export default History
+      );
+    }
+    
+    export default History

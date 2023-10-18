@@ -1,5 +1,4 @@
 import './css/NFTListing.css'
-import NFT from './components/NFT'
 import { useState,useEffect } from 'react';
 import { TextField } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
@@ -11,12 +10,13 @@ import UpIcon from '@mui/icons-material/ArrowDropUp';
 import DownIcon from '@mui/icons-material/ArrowDropDown';
 import axios from 'axios';
 // Show a listing of NFTs
-function Items(){
+function Inventory(){
      
       const [filter, setFilter] = useState('');
       const [data, setData] = useState([]);
       const [ascDesc,setAscDesc] = useState(false);
       const [type,setType] = useState('none');
+      const [uname,setUname] = useState('');
  
       useEffect(() => {
         const url = 'http://localhost/api/api_nft.php/';
@@ -30,9 +30,9 @@ function Items(){
              
               return response.data;
             })
-            .then((data) => setData(data.filter((item) =>
-            item.owner.toLowerCase() === "none")))
+            .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));
+             setUname(sessionStorage.getItem("username"));
           
           }, []);
         
@@ -83,35 +83,35 @@ function Items(){
             }
           });
         }
-        const allSort = (array,type) =>{
+        const allSort = (type) =>{
           let dataSort = [];
           switch(type){
             case "none":
-             dataSort =  array;
+             dataSort =  data;
              break;
             case "alpha":
-              dataSort =  alphaSort(array,ascDesc); 
+              dataSort =  alphaSort(data,ascDesc); 
               break;         
             case "likes":
-              dataSort =  likesSort(array,ascDesc);
+              dataSort =  likesSort(data,ascDesc);
               break;
             case "views":
-              dataSort =  viewsSort(array,ascDesc);
+              dataSort =  viewsSort(data,ascDesc);
               break;
             case "price":
-              dataSort =   priceSort(array,ascDesc);
+              dataSort =   priceSort(data,ascDesc);
               break;
           }
+          dataSort = dataSort.filter((item) =>
+          item.owner.toLowerCase() === (uname.toLowerCase())
+        )
           return dataSort;
         }
       
-    //Most liked feature
-    const sortedData = data.slice().sort((a, b) => b.likes - a.likes);
+   
 // Chunk the items into groups of 3
-        const chunkedItems = chunkArray(allSort(data,type), 3);
-    // Take the top 3 items with the most 'likes'
-    const top3Items = sortedData.slice(0, 3);
-
+        const chunkedItems = chunkArray(allSort(type), 3);
+   
     // Function to handle filter input changes
     const handleFilterChange = (e) => {
       setFilter(e.target.value);
@@ -121,7 +121,7 @@ function Items(){
     const filteredData = data.filter((item) =>
       item.name.toLowerCase().includes(filter.toLowerCase())
     );
-    const chunkedItems_2 = chunkArray(allSort(filteredData,type), 3);
+    const chunkedItems_2 = chunkArray(filteredData, 3);
     const hasValue = () => {
      return filter == '';
     };
@@ -165,40 +165,27 @@ function Items(){
 </div>
      {hasValue() ? (
       <div className='container d-flex justify-content-center flex-column align-items-center my-5'>
-     <div className = 'blog'>
-     <div className='container-title'>
-         <h3 className='py-3'>Most liked Items</h3>
-         </div>
-         <div className="d-flex flex-row justify-content-center my-3 py-5">
-          {top3Items.map((item, index) => (
-           <NFT 
-              key={`nft_${index}`}
-              id = {item.id}
-               name = {item.name}
-                color = {item.color}
-                price = {item.price}
-                views = {item.views}
-                likes = {item.likes}
-           />
-          ))}
-        </div>
-     </div>
      <div className = 'blog my-5'>
        <div className='container-title'>
-       <h3 className='py-3'>All Items</h3>
+       <h3 className='py-3'>Inventory</h3>
          </div>
          {chunkedItems.map((group, groupIndex) => (
         <div key={groupIndex} className="d-flex flex-row justify-content-center my-3 py-5">
           {group.map((item, index) => (
-           <NFT 
-                 key={`nft_${groupIndex}_${index}`}
-                 id = {item.id}
-                name = {item.name}
-                color = {item.color}
-                price = {item.price}
-                views = {item.views}
-                likes = {item.likes}
-           />
+            <div className="item-container-3 mx-4">
+        <div className="item-img" style={{backgroundColor:item.color}}></div>
+        <h5 className='item-title'>{item.name}</h5>
+        <div className="justify-content-center">
+            <p><strong>Price</strong></p>
+            <p>{item.price}</p>
+            <p><strong>Address</strong></p>
+            <p>{item.address}</p>
+            <p><strong>Transaction ID</strong></p>
+            <p>{item.transID}</p>
+            <p><strong>Token ID</strong></p>
+            <p>{item.tokenID}</p>
+        </div>
+        </div>
           ))}
         </div>
       ))}
@@ -214,14 +201,20 @@ function Items(){
          {chunkedItems_2.map((group, groupIndex) => (
         <div key={groupIndex} className="d-flex flex-row justify-content-center my-3 py-5">
           {group.map((item, index) => (
-           <NFT 
-           key={`nft_${groupIndex}_${index}`}
-                name = {item.name}
-                color = {item.color}
-                price = {item.price}
-                views = {item.views}
-                likes = {item.likes}
-           />
+          <div className="item-container-3 mx-4">
+          <div className="item-img" style={{backgroundColor:item.color}}></div>
+          <h5 className='item-title'>{item.name}</h5>
+          <div className="justify-content-center">
+              <p><strong>Price</strong></p>
+              <p>{item.price}</p>
+              <p><strong>Address</strong></p>
+              <p>{item.address}</p>
+              <p><strong>Transaction ID</strong></p>
+              <p>{item.transID}</p>
+              <p><strong>Token ID</strong></p>
+              <p>{item.tokenID}</p>
+          </div>
+          </div>
           ))}
         </div>
       ))}
@@ -236,4 +229,4 @@ function Items(){
  )
 
 }
-export default Items
+export default Inventory

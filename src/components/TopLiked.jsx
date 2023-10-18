@@ -1,20 +1,25 @@
 import { useState,useEffect } from 'react';
 import NFT from './NFT'
+import axios from 'axios'
 //Show top bid
 function TopLiked(){
      const [data, setData] = useState([]);
 
       useEffect(() => {
         
-          fetch('./src/api/nft.json')
+        const url = 'http://localhost/api/api_nft.php/';
+        //const url = './src/api/nft.json';
+        
+          axios.get(url)
             .then((response) => {
-              if (!response.ok) {
+              if (!response.data) {
                 throw new Error('Network response was not ok');
               }
              
-              return response.json();
+              return response.data;
             })
-            .then((data) => setData(data))
+            .then((data) => setData(data.filter((item) =>
+            item.owner.toLowerCase() === "none")))
             .catch((error) => console.error('Error fetching data:', error));
         }, []);
          //Most liked feature
@@ -29,6 +34,7 @@ function TopLiked(){
        {top3Items.map((item, index) => (
            <NFT 
               key={`nft_${index}`}
+              id = {item.id}
                name = {item.name}
                 color = {item.color}
                 price = {item.price}
