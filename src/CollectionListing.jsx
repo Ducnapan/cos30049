@@ -48,8 +48,7 @@ function CollectionListing(){
  
       useEffect(() => {
            setData(data.filter((item) =>
-            item.owner.toLowerCase() === "none"))
-            .catch((error) => console.error('Error fetching data:', error));
+            item.owner.toLowerCase() === "none"));
              setCollect(sessionStorage.getItem("collection"));
           
           }, []);
