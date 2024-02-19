@@ -44,8 +44,13 @@ function Inventory(){
       ]);
  
       useEffect(() => {
+        if(sessionStorage.getItem("username") !== null){
 
              setUname(sessionStorage.getItem("username"));
+        }
+        else{
+          alert("There is no username!");
+        }
           
           }, []);
         
